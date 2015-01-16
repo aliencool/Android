@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+   android:minWidth="144dp"
+   android:configure="android.activity.lanunch.test.Appwidget_Configuration"
+   android:minHeight="74dp"
+   android:initialLayout="@layout/appwidget_layout"
+   android:updatePeriodMillis="3000">
+</appwidget-provider>
+

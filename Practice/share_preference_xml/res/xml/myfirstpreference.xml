@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="Backup and restore" android:summary="1">
+        <CheckBoxPreference android:title="Backup my data" android:key="check" android:summary="Back up application data."/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Sound">
+        <ListPreference android:title="Setting for Voice"  android:entries="@array/Mylist" android:entryValues="@array/Mylist" android:key="MyList"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Other">
+        <EditTextPreference android:dialogTitle="ssss" android:key="etp" android:title="aaaa"/>
+        <RingtonePreference android:dialogTitle="ssss" android:title="aaaa"/>
+    </PreferenceCategory>
+
+ 	   <PreferenceScreen android:title="Settingforwifi">
+        <intent android:action="android.settings.SETTINGS"/>
+       </PreferenceScreen>
+</PreferenceScreen>

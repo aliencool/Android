@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 	android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <EditText 
+		android:id="@+id/myedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+     <TextView
+        android:id="@+id/mytestview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+     
+     <EditText 
+		android:id="@+id/myedit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+  
+<Button 
+    android:id="@+id/mybutton"
+    android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+    />
+
+</LinearLayout>

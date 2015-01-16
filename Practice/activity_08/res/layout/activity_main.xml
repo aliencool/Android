@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 	android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+	<RadioGroup
+	     android:id="@+id/radiogroup"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	    >
+	    <RadioButton 
+	       android:id="@+id/radio1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="male"
+	        />
+	    <RadioButton 
+	        android:id="@+id/radio2"
+	         android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="fmale"/>
+	</RadioGroup>    
+   
+	<CheckBox 
+	    android:id="@+id/swim"
+	     android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="swim"
+	    />
+	<CheckBox 
+	      android:id="@+id/piano"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="play the piano"
+	    />
+	<CheckBox 
+	      android:id="@+id/basketballs"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="play basketballs"
+	    />
+	<CheckBox 
+	      android:id="@+id/english"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="study the english"
+	    />
+    
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item android:title="添加" android:icon="@android:drawable/ic_menu_add"/>
+	<item android:title="删除" android:icon="@android:drawable/ic_menu_delete"/>
+	<item android:title="修改" android:icon="@android:drawable/ic_menu_upload"/>
+    </group>
+	<item android:title="电话" android:icon="@android:drawable/ic_menu_call"/>
+	<item android:title="邮件" android:icon="@android:drawable/ic_menu_edit">
+	<menu>
+	<item android:checkable="true" android:title="谢谢" android:icon="@android:drawable/ic_menu_mylocation"/>
+	<item android:checkable="true" android:title="谢谢" android:icon="@android:drawable/ic_menu_share"/>
+	    
+	</menu>
+	
+	</item>
+
+</menu>

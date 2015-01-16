@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="MyColorRed">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="MyColorGreen">
+        <item name="android:textColor">@color/green</item>
+    </style>
+   
+</resources>

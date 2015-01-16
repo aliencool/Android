@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 	android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:orientation="horizontal"
+     android:layout_weight="1"
+    >
+       
+    <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+      	android:layout_weight="1"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first 1 linear"
+        android:textSize="18pt"
+        android:background="#aa0000"
+        
+      
+        
+        
+        />
+     <TextView
+        android:id="@+id/mytestview1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        android:layout_weight="1"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My second 1 linear"
+        android:textSize="18pt"
+        android:background="#0000aa"
+        
+    
+        
+        />
+    </LinearLayout>
+    
+    
+    
+
+    <LinearLayout 
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:orientation="vertical"
+     android:layout_weight="1"
+    >
+          
+    <TextView
+        android:id="@+id/mytestview2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+      	android:layout_weight="1"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first 2 linear"
+        android:textSize="18pt"
+        android:background="#aa0000"
+        
+     
+        
+        />
+     <TextView
+        android:id="@+id/mytestview3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:layout_weight="3"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My second 2 linear"
+        android:textSize="18pt"
+        android:background="#0000aa"
+     
+        
+        
+        />
+        
+    </LinearLayout>
+    
+
+</LinearLayout>

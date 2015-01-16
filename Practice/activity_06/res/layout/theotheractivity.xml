@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 	android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:orientation="horizontal"
+     android:layout_weight="1"
+    >
+       
+    <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+      	android:layout_weight="1"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first 1 linear"
+        android:textSize="18pt"
+        android:background="#aa0000"
+        
+      
+        
+        
+        />
+     <TextView
+        android:id="@+id/mytestview1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        android:layout_weight="1"
+        
+        android:gravity="center_vertical"
+        
+        android:text="My second 1 linear"
+        android:textSize="18pt"
+        android:background="#0000aa"
+        
+    
+        
+        />
+    </LinearLayout>
+    
+    
+    
+
+    <TableLayout 
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    >
+          
+ <TableRow >
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#aa0000"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#0000aa"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+        
+        
+    </TableRow>
+    
+    
+     <TableRow >
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#aa0000"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#0000aa"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+        
+        
+    </TableRow>
+        
+    </TableLayout>
+    
+
+</LinearLayout>

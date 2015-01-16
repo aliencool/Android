@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="ParentCCC">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ParentCCC.CCCStyleR">
+        <item name="android:background">@color/red</item>
+    </style>
+    
+     <style name="ParentCCC.CCCStyleG">
+        <item name="android:background">@color/green</item>
+    </style>
+    
+      <style name="ParentCCC.CCCStyleY">
+        <item name="android:background">@color/yellow</item>
+    </style>
+  
+</resources>

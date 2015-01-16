@@ -1,0 +1,91 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   	android:stretchColumns="0"
+    tools:context=".MainActivity" 
+    
+    >
+	
+    <TableRow >
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#aa0000"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#0000aa"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+        
+        
+    </TableRow>
+    
+    
+     <TableRow >
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#aa0000"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+          <TextView
+        android:id="@+id/mytestview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        
+        android:gravity="center_vertical"
+        
+        android:text="My first tablelayout"
+        android:textSize="3pt"
+        android:background="#0000aa"
+        
+        android:padding="3dip"
+      
+        android:singleLine="true"
+         
+        />
+        
+        
+    </TableRow>
+
+
+
+</TableLayout>
