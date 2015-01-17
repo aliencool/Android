@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:id="@+id/stage_index"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+    <ImageView
+        android:id="@+id/profileimage"
+        android:src="@drawable/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/stage_index"
+        />
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:id="@+id/mydescription"
+        android:text="@string/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/profileimage"
+        />
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:id="@+id/authority"
+        android:textSize="13sp"
+        android:text="@string/authory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/mydescription"
+        />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_height="15dp"
+        android:id="@+id/waveformView"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/authority"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

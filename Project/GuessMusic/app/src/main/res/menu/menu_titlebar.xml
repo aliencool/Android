@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:icon="@drawable/ic_action_bulb"
+            android:actionProviderClass="ccc_app.guessmusic.ui.definecontrol.ActionBarHelper"
+            android:showAsAction="ifRoom"
+            android:title="Utility"/>
+    <item android:icon="@drawable/ic_action_guitar"
+        android:actionProviderClass="ccc_app.guessmusic.ui.definecontrol.ActionBarChoice"
+        android:showAsAction="ifRoom"
+        android:title="Choice"/>
+</menu>

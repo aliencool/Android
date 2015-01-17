@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:textSize="60sp"
+        android:layout_width="80dp"
+        android:id="@+id/stage_index"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:src="@drawable/profile"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stage_index"
+        />
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:id="@+id/mydescription"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        />
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:textSize="25sp"
+        android:text="@string/authory"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_height="25dp"
+            android:id="@+id/waveformView"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            />
+    </FrameLayout>
+</LinearLayout>

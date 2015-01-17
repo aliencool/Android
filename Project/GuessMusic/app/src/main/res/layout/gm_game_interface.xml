@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gamePage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+        <!--record-->
+        <include layout="@layout/gm_record_interface"/>
+        <!--word-->
+        <include layout="@layout/gm_word_interface"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/gm_victory_interface"/>
+</FrameLayout>

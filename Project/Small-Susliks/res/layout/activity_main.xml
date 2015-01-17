@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   	android:background="@drawable/background"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/susliks_1"
+        android:visibility="gone"
+        android:src="@drawable/mouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+    
+      <ImageView
+        android:id="@+id/susliks_2"
+        android:visibility="gone"
+        android:src="@drawable/mouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+    
+        <ImageView
+        android:id="@+id/imageMouse"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/small_mouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        
+        <TextView 
+              android:id="@+id/score"
+            android:layout_alignTop="@id/imageMouse"
+            android:layout_toRightOf="@id/imageMouse"
+              android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="8pt"
+            />
+
+</RelativeLayout>

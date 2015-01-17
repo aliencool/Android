@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_1">
+
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:layout_marginTop="15dp"
+        android:id="@+id/medal_zero"
+        android:text="Hero Medal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <ImageView
+        android:id="@+id/medal_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_homesome"
+        android:layout_below="@id/medal_zero"
+        android:layout_alignParentLeft="true"/>
+
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/medal_two"
+        android:layout_below="@id/medal_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_hero"/>
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/medal_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_bat"
+        android:layout_below="@id/medal_zero"
+        android:layout_toRightOf="@id/medal_one"
+        />
+
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/medal_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medal_three"
+        android:background="@drawable/ic_spider"
+        android:layout_toRightOf="@id/medal_two"
+        />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/btn_final_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_final_continue"/>
+
+        <ImageButton
+            android:id="@+id/btn_final_share"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_final_share"/>
+
+    </LinearLayout>
+</RelativeLayout>

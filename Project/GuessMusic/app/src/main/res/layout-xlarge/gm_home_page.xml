@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/homeProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile"
+        android:layout_centerHorizontal="true"/>
+
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:text="For music was born."
+        android:id="@+id/musicText"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/homeProfile" />
+
+
+    <ccc_app.guessmusic.ui.definecontrol.CustomFont
+        android:text="2015"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/musicText"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
