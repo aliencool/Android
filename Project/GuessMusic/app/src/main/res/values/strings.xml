@@ -28,6 +28,7 @@
     <string name="deleteBar">删除一个错误答案</string>
     <string name="tipsBar">提示一个正确答案</string>
     <string name="infBar">显示金钱</string>
+    <string name="choiceStage">选择关卡</string>
     <string name="shareBar">分享到您的微信请求帮助</string>
     <string name="again">再听一次</string>
     <string name="choicegirl">选择女性歌手</string>

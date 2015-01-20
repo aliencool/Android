@@ -61,7 +61,9 @@ public class ActivityBase extends Activity{
         return super.onCreateOptionsMenu(menu);
     }
 
-    protected final void makeSureCoin(DialogInterface.OnClickListener listener,String coinInfo)
+    protected final void makeSureCoin(DialogInterface.OnClickListener listener,
+                                      String coinInfo
+                                      )
     {
         AlertDialog alertDialog = new  AlertDialog.Builder(this)
                                            .setTitle(coinInfo)
@@ -70,6 +72,7 @@ public class ActivityBase extends Activity{
                                                public void onClick(DialogInterface dialog, int which) {
                                                    dialog.dismiss();
                                                }
-                                           }).setPositiveButton(getString(R.string.TRUE),listener).show();
+                                           }).setPositiveButton(getString(R.string.TRUE),listener)
+                                             .show();
     }
 }

@@ -1,5 +1,6 @@
 package ccc_app.guessmusic.ui;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -34,6 +36,7 @@ import ccc_app.guessmusic.utilities.PlayMusic;
 import ccc_app.guessmusic.utilities.SongUtility;
 import ccc_app.guessmusic.utilities.StoreInfo;
 import ccc_app.guessmusic.utilities.ViewUtility;
+import ccc_app.guessmusic.utilities.WeiXinUtilities;
 
 public class GameInterface extends ActivityBase implements IWordButtonClick,IHelperItem,ISelectMusic{
     //define
@@ -45,9 +48,9 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
     private TextView mIndexText;
     private TextView mSongText;
     private TextView mCurrentStageText;
-
-    private ImageButton mNextButton;
     private ImageButton mShareButton;
+    private ImageButton mNextButton;
+//    private ImageButton mShareButton;
     private ArrayList<WordButton> mAllData;
     private ArrayList<WordButton> mSelectData;
     private SongModel mSongModel;
@@ -114,7 +117,35 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
 
                     mVictoryView.setVisibility(View.GONE);
 
+                    if (!isM)
+                    {
+                        //Next
+                        mCurrentStage_Girl++;
+                    }
+                    else
+                    {
+                        mCurrentStage_Man++;
+                    }
+
                     initCurrentData();
+                }
+            }
+        });
+        //share
+        mShareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isM)
+                {
+                    WeiXinUtilities.getInstance(GameInterface.this).sendText("我在<只为歌手!>女歌手已经过到第"
+                            +(mCurrentStage_Girl+1)+"关!"+
+                            "获得了:"+mCurrentMoney+"$");
+                }
+                else
+                {
+                    WeiXinUtilities.getInstance(GameInterface.this).sendText("我在<只为歌手!>男歌手已经过到第"
+                            +(mCurrentStage_Man+1)+"关!"+
+                            "获得了:"+mCurrentMoney+"$");
                 }
             }
         });
@@ -169,7 +200,7 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
 
         mChoiceMoney = returnChoiceMoney();
 
-        LinearLayout.LayoutParams _LayParams = new LinearLayout.LayoutParams(86,84);
+        LinearLayout.LayoutParams _LayParams = new LinearLayout.LayoutParams(86,86);
         //Clean
         mAnswerBoxLinerLayout.removeAllViews();
         //Set Stage
@@ -516,12 +547,15 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
         switch (id)
         {
             case 0:
-                //music
+                //money
                 mPlayMusic.playMusicNextAndCost();
 
                 showMsg(getString(R.string.tipsMoney)+mCurrentMoney);
                 break;
             case 1:
+                choiceStage(1);
+                break;
+            case 2:
                 if(!deletedAnswer())
                 {
                     showMsg("金钱不足哦");
@@ -544,7 +578,7 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
 
                 }
                 break;
-            case 2:
+            case 3:
                 if(!deletedAnswer())
                 {
                     showMsg("金钱不足哦");
@@ -565,7 +599,7 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
                     },getString(R.string.delete_error));
                 }
                 break;
-            case 3:
+            case 4:
                 if(!giveAnswer())
                 {
                     showMsg("金钱不足哦");
@@ -591,8 +625,25 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
                     },coinChoice);
                 }
                 break;
-            case 4:
-                showMsg("即将开放...,有问题请联系:aasuperkey@163.com,谢谢您!");
+            case 5:
+                if (!isM)
+                {
+                    WeiXinUtilities.getInstance(this).sendText("我在<只为歌手!>女歌手在第"
+                            +(mCurrentStage_Girl+1)+"关!"+
+                            "遇到困难");
+                }
+                else
+                {
+                    WeiXinUtilities.getInstance(this).sendText("我在<只为歌手!>男歌手在第"
+                            +(mCurrentStage_Man+1)+"关!"+
+                            "遇到困难");
+                }
+                mWaveFormView.removeAllViews();
+                mWaveFormView.setVisibility(View.GONE);
+                PlayMusic.stopMusic();
+                //Save
+                StoreInfo.saveData(this,mCurrentStage_Girl,
+                        mCurrentStage_Man,mCurrentMoney,mGameInfo[StoreInfo.CURRENT_ISM]);
                 break;
         }
     }
@@ -743,19 +794,19 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
     {
         //play stop
         PlayMusic.stopMusic();
+        mWaveFormView.removeAllViews();
+        mWaveFormView.setVisibility(View.GONE);
 
         mVictoryView.setVisibility(View.VISIBLE);
         if ( !isM )
         {
             mIndexText.setText((mCurrentStage_Girl+1)+"");
-            //Next
-            mCurrentStage_Girl++;
+
         }
         else
         {
             mIndexText.setText((mCurrentStage_Man+1)+"");
-            //Next
-            mCurrentStage_Man++;
+
         }
         mSongText.setText(mSongModel.getSongName());
 
@@ -769,11 +820,11 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
     {
         if ( !isM )
         {
-            return  ( mCurrentStage_Girl == SongUtility.getSongInfo_M.length);
+            return  ( mCurrentStage_Girl == SongUtility.getSongInfo_M.length - 1 );
         }
         else
         {
-            return  ( mCurrentStage_Man == SongUtility.getSongInfo_G.length);
+            return  ( mCurrentStage_Man == SongUtility.getSongInfo_G.length - 1);
         }
     }
 
@@ -801,5 +852,76 @@ public class GameInterface extends ActivityBase implements IWordButtonClick,IHel
         super.onPause();
     }
 
+    private void choiceStage(int index)
+    {
+
+        View view = ViewUtility.getView(this, R.layout.gm_choicestage)
+                .findViewById(R.id.editTextStage);
+        ((ViewGroup) view.getParent()).removeView(view);
+
+        final EditText editText = (EditText)view.findViewById(R.id.editTextStage);
+
+        if ( view!=null && editText!=null )
+        {
+            AlertDialog alertDialog = new  AlertDialog.Builder(this)
+                    .setView(view)
+                    .setTitle("关卡选择")
+                    .setNegativeButton(getString(R.string.FALSE),new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).setPositiveButton(getString(R.string.TRUE),new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                           String msg = editText.getText().toString();
+                            if ( !msg.matches("^[1-9][0-9]?")|| msg.trim().length() == 0)
+                            {
+                                showMsg("么么哒，不要乱输入哦，请重新输入!");
+                                return;
+                            }
+                            else
+                            {
+                                int stageIndex = Integer.parseInt(msg);
+                                if (!isM)
+                                {
+                                    if ( stageIndex < SongUtility.getSongInfo_M.length)
+                                    {
+                                        mCurrentStage_Girl = stageIndex - 1;
+
+                                        initCurrentData();
+
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        showMsg("么么哒，您输入的值超出范围，请重新输入!");
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    if ( stageIndex < SongUtility.getSongInfo_G.length)
+                                    {
+                                        mCurrentStage_Man = stageIndex - 1;
+
+                                        initCurrentData();
+
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        showMsg("么么哒,您输入的值超出范围，请重新输入!");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    })
+                    .show();
+        }
+
+    }
 
 }

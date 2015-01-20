@@ -51,9 +51,19 @@ public class ActionBarHelper extends ActionProvider {
                 return false;
             }
         });
-
+        //选择关卡
+        subMenu.add(0,1,0,mContext.getString(R.string.choiceStage))
+                .setIcon(R.drawable.ic_cursor_pointer).setOnMenuItemClickListener(
+                new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if( mIHelperItem != null)
+                    mIHelperItem.helperForActBar(item.getItemId());
+                return false;
+            }
+        });
         //music
-        subMenu.add(0,1,0,mContext.getString(R.string.again))
+        subMenu.add(0,2,0,mContext.getString(R.string.again))
                 .setIcon(R.drawable.ic_action_headphones).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -63,7 +73,7 @@ public class ActionBarHelper extends ActionProvider {
             }
         });
         //delete a answer
-        subMenu.add(0,2,0,mContext.getString(R.string.deleteBar))
+        subMenu.add(0,3,0,mContext.getString(R.string.deleteBar))
                 .setIcon(R.drawable.ic_action_x_48).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -73,7 +83,7 @@ public class ActionBarHelper extends ActionProvider {
             }
         });
         //tips
-        subMenu.add(0,3,0,mContext.getString(R.string.tipsBar))
+        subMenu.add(0,4,0,mContext.getString(R.string.tipsBar))
                 .setIcon(R.drawable.ic_action_help_48).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -84,7 +94,7 @@ public class ActionBarHelper extends ActionProvider {
         });
 
         //share
-        subMenu.add(0,4,0,mContext.getString(R.string.shareBar))
+        subMenu.add(0,5,0,mContext.getString(R.string.shareBar))
                 .setIcon(R.drawable.ic_action_share).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

@@ -148,7 +148,7 @@ public class PlayMusic {
 
             mPaint.setStrokeWidth(8f);
             mPaint.setAntiAlias(true);
-            mPaint.setColor(Color.GRAY);
+            mPaint.setColor(Color.RED);
         }
 
       public void  upData(byte []bytes) {

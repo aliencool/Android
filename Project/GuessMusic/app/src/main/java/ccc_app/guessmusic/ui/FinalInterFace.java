@@ -1,6 +1,9 @@
 package ccc_app.guessmusic.ui;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import ccc_app.guessmusic.base.ActivityBase;
 import ccc_app.guessmusic.ui.R;
 import ccc_app.guessmusic.utilities.StoreInfo;
+import ccc_app.guessmusic.utilities.WeiXinUtilities;
 
 /**
  * Created by Think on 2015/1/15.
@@ -20,13 +24,14 @@ public class FinalInterFace extends ActivityBase {
     public final static String PASS_GIRL = "PASS_Gril";
     public final static String PASS_MONEY = "PASS_MONEY";
 
-    private final int PASS_THIRB_HERO = 1500;
-    private final int PASS_FOURTH_HERO = 2500;
-    private final int PASS_FOURTH_ALL = 3000;
+    private final int PASS_THIRB_HERO = 2300;
+    private final int PASS_FOURTH_HERO = 2800;
+    private final int PASS_FOURTH_ALL = 3300;
 
     private ImageButton mImageButton_continue;
     private ImageButton mImageButton_share;
 
+    private ImageView mImageView_medal_1;
     private ImageView mImageView_medal_2;
     private ImageView mImageView_medal_3;
     private ImageView mImageView_medal_4;
@@ -69,7 +74,28 @@ public class FinalInterFace extends ActivityBase {
         mImageButton_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMsg("即将开放");
+
+                if ( mPass_Money <= PASS_THIRB_HERO )
+                {
+                    WeiXinUtilities.getInstance(FinalInterFace.this)
+                            .sendBitMap(R.drawable.medal_1,"我在<只为歌手!>,我的第一个英雄勋章！！");
+                    return;
+                }
+
+                if( mPass_Money >= PASS_THIRB_HERO && mPass_Money <= PASS_FOURTH_HERO)
+                {
+                    WeiXinUtilities.getInstance(FinalInterFace.this)
+                            .sendBitMap(R.drawable.medal_2,"我在<只为歌手!>,我的第二个英雄勋章！！");
+                    return;
+                }
+                if( mPass_Money >= PASS_FOURTH_HERO && mPass_Money <= PASS_FOURTH_ALL)
+                {
+                    WeiXinUtilities.getInstance(FinalInterFace.this)
+                            .sendBitMap(R.drawable.medal_4,"我在<只为歌手!>,我的第三个英雄勋章！！");
+                    return;
+                }
+                WeiXinUtilities.getInstance(FinalInterFace.this)
+                        .sendBitMap(R.drawable.medal_3,"我在<只为歌手!>,终极勋章！！");
             }
         });
     }
@@ -78,6 +104,8 @@ public class FinalInterFace extends ActivityBase {
     {
         mImageButton_share = (ImageButton)findViewById(R.id.btn_final_share);
         mImageButton_continue = (ImageButton)findViewById(R.id.btn_final_continue);
+
+        mImageView_medal_1 = (ImageView)findViewById(R.id.medal_one);
         mImageView_medal_2 = (ImageView)findViewById(R.id.medal_two);
         mImageView_medal_3 = (ImageView)findViewById(R.id.medal_three);
         mImageView_medal_4 = (ImageView)findViewById(R.id.medal_four);

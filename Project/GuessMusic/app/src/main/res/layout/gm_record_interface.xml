@@ -46,7 +46,7 @@
 
     <LinearLayout
         android:visibility="gone"
-        android:layout_height="15dp"
+        android:layout_height="20dp"
         android:id="@+id/waveformView"
         android:layout_gravity="center"
         android:orientation="horizontal"

@@ -42,9 +42,9 @@ public class SongUtility {
             {"music_boy/__00007.m4a", "没离开过"},
             {"music_boy/__00008.m4a", "烟花易冷"},
             {"music_boy/__00009.m4a", "烛光里的妈妈"},
-            {"music_boy/__000010.m4a", "我的未来不是梦"},
-            {"music_boy/__000011.m4a", "月亮惹的祸"},
-            {"music_boy/__000012.m4a", "父亲"}
+            {"music_boy/__00010.m4a", "我的未来不是梦"},
+            {"music_boy/__00011.m4a", "月亮惹的祸"},
+            {"music_boy/__00012.m4a", "父亲"}
     };
 
 
