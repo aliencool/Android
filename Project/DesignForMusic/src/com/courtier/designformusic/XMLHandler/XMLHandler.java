@@ -7,6 +7,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import android.util.Log;
 
 import com.courtier.designformusic.Bean.MusicBean;
+import com.courtier.designformusic.utilities.VariableStatic;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,7 @@ public class XMLHandler  extends DefaultHandler{
         if(mTarget.equals("mp3name"))
         {
             mMusicBean.setMp3Name(temp);
+            mMusicBean.setMp3Path(VariableStatic.URLFORPATH+temp);
         }
         
         if(mTarget.equals("mp3size"))
@@ -69,9 +71,14 @@ public class XMLHandler  extends DefaultHandler{
             mMusicBean.setLrcName(temp);
         }
         
-        if(mTarget.equals("lrcsize"))
+        if(mTarget.equals("mp3Time"))
         {
-            mMusicBean.setLrcSize(Integer.parseInt(temp));
+            mMusicBean.setMp3Time(Integer.parseInt(temp));
+        }
+        
+        if(mTarget.equals("mp3Authory"))
+        {
+            mMusicBean.setMp3Authory(temp);
         }
         
         super.characters(ch, start, length);

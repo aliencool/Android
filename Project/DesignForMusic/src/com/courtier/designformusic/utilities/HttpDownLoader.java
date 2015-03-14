@@ -30,6 +30,10 @@ public class HttpDownLoader extends AsyncTask<String, Integer, Long> {
 		mWhat = what;
 	}
 	
+	public HttpDownLoader(String url) {
+		mUrl = url;
+	}
+	
 	@Override
 	protected Long doInBackground(String... params) {
 		OutputStream output = null;
@@ -39,13 +43,13 @@ public class HttpDownLoader extends AsyncTask<String, Integer, Long> {
 			HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
 			InputStream input = urlConn.getInputStream();
 			//文件夹
-			File dir = new File(VariableStatic.LOCATION);  
+			File dir = new File(VariableStatic.LOCATIONOFMP3);  
 			if(!dir.exists())
 			{
 				dir.mkdir();
 			}
 			//本地文件
-			File file = new File(VariableStatic.LOCATION,params[0]);  
+			File file = new File(VariableStatic.LOCATIONOFMP3,params[0]);  
 			file.createNewFile();  
 			//写入本地
 			output = new FileOutputStream(file);  
@@ -75,7 +79,7 @@ public class HttpDownLoader extends AsyncTask<String, Integer, Long> {
 		}
 		//发送处理
 		if (mHandler != null) {
-			sendResponse(mHandler, VariableStatic.LOCATION + File.separator + params[0], mWhat);
+			sendResponse(mHandler, VariableStatic.LOCATIONOFMP3 + File.separator + params[0], mWhat);
 		} else {
 			Log.w("TAG", "mHandler == null, what = " + mWhat);
 		}
